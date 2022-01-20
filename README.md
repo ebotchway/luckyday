@@ -11,7 +11,7 @@
 
 A TV show helping leveling the play ground between the rich and the less privileged
 
-- [Features](Link).
+-   [Features](Link).
 
 ## LuckyDay Sponsors
 
@@ -19,7 +19,7 @@ We would like to extend our thanks to the following headline sponsors for suppor
 
 ### Premium Partners
 
-- **[Name](Link)**
+-   **[Name](Link)**
 
 ## Security Vulnerabilities
 
@@ -28,3 +28,7 @@ If you discover a security vulnerability within LuckyDay, please send an e-mail 
 ## License
 
 The LuckyDay operates with its own software licensed owned by the designer and idea originator [LUCKYDAY license](#).
+
+## Requirements
+
+Do not forget to activate PHP-GD extentions

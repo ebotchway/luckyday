@@ -18,7 +18,7 @@ class CreatePlayersTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('phone_num');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }

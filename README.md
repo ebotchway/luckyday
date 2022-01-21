@@ -32,3 +32,4 @@ The LuckyDay operates with its own software licensed owned by the designer and i
 ## Requirements
 
 Do not forget to activate PHP-GD extentions
+During imports the first column should be the name and the second column the phone numbers

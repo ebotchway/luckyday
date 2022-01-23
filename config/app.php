@@ -232,7 +232,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,  //Added for excels
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class, //added for datatables
 
     ],
 

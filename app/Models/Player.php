@@ -15,8 +15,7 @@ class Player extends Model
      * @var string[]
      */
     protected $fillable = [
-        'fname',
-        'lname',
+        'name',
         'phone_num',
         'location',
     ];

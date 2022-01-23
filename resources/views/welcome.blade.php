@@ -21,12 +21,12 @@
                         <div class="row justify-content-center">
                             <div class="col-auto">
                                 <a href="#">
-                                    <button class='btn btn-primary'>PICK PLAYERS</button>
+                                    <button class='btn btn-primary'><i class="fa fa-random" aria-hidden="true"></i> PICK PLAYERS</button>
                                 </a>
                             </div>
                             <div class="col-auto">
                                 <a href="#">
-                                    <button class='btn btn-primary'>PLAY LUCKYDAY</button>
+                                    <button class='btn btn-primary'><i class="fa fa-gamepad" aria-hidden="true"></i> PLAY LUCKYDAY</button>
                                 </a>
                             </div>
                         </div>

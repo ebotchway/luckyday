@@ -7,7 +7,6 @@ use App\Models\Player;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Yajra\DataTables\Facades\DataTables;
-use Session;
 
 class PlayerController extends Controller
 {

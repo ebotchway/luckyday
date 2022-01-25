@@ -20,4 +20,11 @@ class Playerscore extends Model
         'third',
         'fourth',
     ];
+
+    public function person()
+    {
+        // Accessing players with their details to scores
+
+        return $this->belongsTo(Player::class, 'pid');
+    }
 }

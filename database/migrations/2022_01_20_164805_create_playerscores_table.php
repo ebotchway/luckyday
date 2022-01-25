@@ -16,10 +16,12 @@ class CreatePlayerscoresTable extends Migration
         Schema::create('playerscores', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('pid')->unsigned();
-            $table->string('first');
-            $table->string('second')->nullable();
-            $table->string('third')->nullable();
-            $table->string('fourth')->nullable();
+            $table->string('#1_win');
+            $table->string('#1_question');
+            $table->string('#2_win')->nullable();
+            $table->string('#2_question')->nullable();
+            $table->string('#3_win')->nullable();
+            $table->string('#3_question')->nullable();
             $table->timestamps();
 
             //foreign key

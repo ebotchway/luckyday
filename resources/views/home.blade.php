@@ -62,12 +62,12 @@
                     <br/>
                     <div class="row justify-content-center">
                         <div class="col-auto">
-                            <a href="{{ route('player.show') }}">
+                            <a href="{{ route('players.show') }}">
                                 <button class='btn btn-primary'><i class="fas fa-tasks"></i> MANAGE PLAYERS</button>
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="#">
+                            <a href="{{ route('scores.show') }}">
                                 <button class='btn btn-primary'><i class="fa fa-star" aria-hidden="true"></i> VIEW PLAYER SCORES</button>
                             </a>
                         </div>

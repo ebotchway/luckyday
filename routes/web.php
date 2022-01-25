@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->name('player.show');
+Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->name('players.show');
+Route::get('scores', [App\Http\Controllers\PlayerscoreController::class, 'index'])->name('scores.show');
 Route::post('file-import', [App\Http\Controllers\PlayerController::class, 'fileImport'])->name('file-import');

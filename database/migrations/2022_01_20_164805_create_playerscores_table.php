@@ -16,16 +16,22 @@ class CreatePlayerscoresTable extends Migration
         Schema::create('playerscores', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('pid')->unsigned();
-            $table->string('#1_win');
-            $table->string('#1_question');
-            $table->string('#2_win')->nullable();
-            $table->string('#2_question')->nullable();
-            $table->string('#3_win')->nullable();
-            $table->string('#3_question')->nullable();
+            $table->bigInteger('#1_win')->unsigned()->nullable();
+            $table->bigInteger('#1_question')->unsigned()->nullable();
+            $table->bigInteger('#2_win')->unsigned()->nullable();
+            $table->bigInteger('#2_question')->unsigned()->nullable();
+            $table->bigInteger('#3_win')->unsigned()->nullable();
+            $table->bigInteger('#3_question')->unsigned()->nullable();
             $table->timestamps();
 
             //foreign key
             $table->foreign('pid')->references('id')->on('players')->onDelete('cascade');
+            $table->foreign('#1_win')->references('id')->on('prizes')->onDelete('cascade');
+            $table->foreign('#2_win')->references('id')->on('prizes')->onDelete('cascade');
+            $table->foreign('#3_win')->references('id')->on('prizes')->onDelete('cascade');
+            $table->foreign('#1_question')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('#2_question')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('#3_question')->references('id')->on('questions')->onDelete('cascade');
         });
     }
 

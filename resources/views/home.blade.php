@@ -36,7 +36,7 @@
                             {
                                 var greeting = 'Good morning Admin, Welcome!';
                             }
-                            else if(hours >= 12 && hours < 18)
+                            else if(hours >= 12 && hours < 17)
                             {
                                 var greeting = 'Good afternoon Admin, Welcome!';
                             }

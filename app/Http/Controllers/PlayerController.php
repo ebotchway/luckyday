@@ -48,4 +48,38 @@ class PlayerController extends Controller
             return back()->with(session(['errorMsg' => 'Error could not import']));
         }
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view($id)
+    {
+        $player = Player::find($id);
+        if (!$player) {
+            return response('Player not found', 404);
+        }
+        return view('players')->with('player', $player);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Player $player, Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+        ]);
+
+        $user->fill($data);
+        $user->save();
+        Flash::message('Your account has been updated!');
+        return back();
+
+        return view('players');
+    }
 }

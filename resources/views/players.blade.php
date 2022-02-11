@@ -9,15 +9,15 @@
 
                 <div class="card-body">
                     @if(!empty(session('successMsg')))
-                        <div class="alert alert-success"> {{ session()->get('successMsg') }}</div>
-
-                        <div>{{session()->flush()}}</div>
+                        <div class="alert alert-success"> {{ session()->get('successMsg') }} {{ session()->forget('successMsg')}}</div>
                     @endif
                     @if(!empty(session('errorMsg')))
-                        <div class="alert alert-danger"> {{ session()->get('errorMsg')}}</div>
-
-                        <div>{{session()->flush()}}</div>
+                        <div class="alert alert-danger"> {{ session()->get('errorMsg')}} {{session()->forget('errorMsg')}}</div>
                     @endif
+
+                    <form style="float: right; margin: 5px;">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> <input type="button" value="Go Back" onclick="history.back()">
+                    </form>
 
                     <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -53,10 +53,10 @@
                                         var table = $('.data-table').DataTable({
                                             processing: true,
                                             serverSide: true,
-                                            ajax: "{{ route('player.show') }}",
+                                            ajax: "{{ route('players.show') }}",
                                             columns: [
                                                 {data: 'id', name: 'id'},
-                                                {data: 'name', name: 'name'},
+                                                {data: 'pname', name: 'pname'},
                                                 {data: 'phone_num', name: 'phone_num'},
                                                 {data: 'location', name: 'location'},
                                                 {data: 'action', name: 'action', orderable: false, searchable: false},

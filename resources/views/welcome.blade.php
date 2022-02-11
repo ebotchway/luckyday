@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-auto">
-                                <a href="#">
+                                <a href="{{ route('pickplayer') }}">
                                     <button class='btn btn-primary'><i class="fa fa-random" aria-hidden="true"></i> PICK PLAYERS</button>
                                 </a>
                             </div>

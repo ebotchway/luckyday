@@ -15,8 +15,15 @@ class Player extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'pname',
         'phone_num',
         'location',
     ];
+
+    public function winning()
+    {
+        // Accessing scores with their details to players
+
+        return $this->hasOne(Playerscore::class);
+    }
 }

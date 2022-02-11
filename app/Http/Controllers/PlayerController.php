@@ -7,7 +7,6 @@ use App\Models\Player;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Yajra\DataTables\Facades\DataTables;
-use Session;
 
 class PlayerController extends Controller
 {
@@ -48,5 +47,51 @@ class PlayerController extends Controller
         } catch (\Throwable $th) {
             return back()->with(session(['errorMsg' => 'Error could not import']));
         }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view($id)
+    {
+        $player = Player::find($id);
+        if (!$player) {
+            return response('Player not found', 404);
+        }
+        return view('players')->with('player', $player);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Player $player, Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+        ]);
+
+        $user->fill($data);
+        $user->save();
+        Flash::message('Your account has been updated!');
+        return back();
+
+        return view('players');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function showPlayerList()
+    {
+        $data = Player::all();
+
+        return view('pick', compact('data'));
     }
 }

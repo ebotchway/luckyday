@@ -82,4 +82,16 @@ class PlayerController extends Controller
 
         return view('players');
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function showPlayerList()
+    {
+        $data = Player::all();
+
+        return view('pick', compact('data'));
+    }
 }

@@ -1,5 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/au49kqgfp24k/public_html/luckydaytvshow.com
-    - /bin/cp -R * $DEPLOYPATH
+    - export DEPLOYPATH=/home/au49kqgfp24k/public_html/luckyday
+    - /bin/cp -r * $DEPLOYPATH
+    - /bin/cp -r ./public/* $DEPLOYPATH/../luckydaytvshow.com/public_html/
+    - /bin/cp ./public/js/*.js $DEPLOYPATH/../luckydaytvshow.com/public_html/js
+    - /bin/cp ./public/css/*.css $DEPLOYPATH/../luckydaytvshow.com/public_html/css

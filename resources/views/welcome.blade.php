@@ -25,7 +25,7 @@
                                 </a>
                             </div>
                             <div class="col-auto">
-                                <a href="#">
+                                <a href="{{ route('game.pick') }}">
                                     <button class='btn btn-primary'><i class="fa fa-gamepad" aria-hidden="true"></i> PLAY LUCKYDAY</button>
                                 </a>
                             </div>

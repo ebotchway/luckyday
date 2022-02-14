@@ -21,3 +21,16 @@ html {
     top: 100%;
     right: 0;
 }
+
+.pill-button {
+    background-color: rgba(41, 170, 202, 0.979);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}

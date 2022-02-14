@@ -23,4 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->name('players.show');
 Route::get('pick', [App\Http\Controllers\PlayerController::class, 'showPlayerList'])->name('pickplayer');
 Route::get('scores', [App\Http\Controllers\PlayerscoreController::class, 'index'])->name('scores.show');
+Route::get('pickplayer', [App\Http\Controllers\GameController::class, 'index'])->name('game.pick');
+
 Route::post('file-import', [App\Http\Controllers\PlayerController::class, 'fileImport'])->name('file-import');

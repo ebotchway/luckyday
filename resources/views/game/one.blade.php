@@ -5,9 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Select Player') }}</div>
 
                 <div class="card-body">
+                    <div class="row justify-content-center">
+                        @foreach ($data as $gamers)
+                            <div class="row">
+                                <button class="pill-button">{{$gamers}}</button>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="card-footer">
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <a href="{{ route('players.show') }}">
@@ -21,7 +30,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">{{ __('Dashboard') }}</div>
             </div>
         </div>
     </div>

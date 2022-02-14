@@ -15,6 +15,7 @@ class Playerscore extends Model
      * @var string[]
      */
     protected $fillable = [
+        'pid',
         '#1_win',
         '#2_win',
         '#3_win',

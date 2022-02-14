@@ -26,4 +26,11 @@ class Player extends Model
 
         return $this->hasOne(Playerscore::class);
     }
+
+    public function gaming()
+    {
+        // Accessing game with their details to players
+
+        return $this->hasOne(Playerscore::class);
+    }
 }

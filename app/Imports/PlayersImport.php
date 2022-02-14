@@ -17,7 +17,7 @@ class PlayersImport implements ToModel
         return new Player([
             'pname'     => $row[0],      // first row should be the name
             'phone_num'    => $row[1],  // second row should be phone number
-            // 'location'    => $row[2],  // third row should be location
+            'location'    => $row[2],  // third row should be location
         ]);
     }
 }

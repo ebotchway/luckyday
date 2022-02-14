@@ -601,6 +601,7 @@ class ComposerStaticInit62953afc1761ff0e75430ec8990ed472
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\CallerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CallerController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/GameController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PlayerController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlayerController.php',
         'App\\Http\\Controllers\\PlayerscoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlayerscoreController.php',

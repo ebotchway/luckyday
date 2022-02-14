@@ -15,10 +15,6 @@
                         <div class="alert alert-danger"> {{ session()->get('errorMsg')}} {{session()->forget('errorMsg')}}</div>
                     @endif
 
-                    <form style="float: right; margin: 5px;">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i> <input type="button" value="Go Back" onclick="history.back()">
-                    </form>
-
                     <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row justify-content-center">
@@ -68,6 +64,12 @@
                             </tbody>
                     </table>
 
+                </div>
+
+                <div class="card-footer">
+                    <form style="float: right; margin: 5px;">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> <input type="button" value="Go Back" onclick="history.back()">
+                    </form>
                 </div>
             </div>
         </div>

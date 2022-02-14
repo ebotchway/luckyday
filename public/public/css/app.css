@@ -23,9 +23,9 @@ html {
 }
 
 .pill-button {
-    background-color: rgba(41, 170, 202, 0.979);
+    background-color: rgba(53, 151, 175, 0.979);
     border: none;
-    color: black;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -33,4 +33,21 @@ html {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.selected-player {
+    background-color: rgb(212, 203, 67);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
 }

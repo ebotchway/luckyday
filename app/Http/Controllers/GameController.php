@@ -15,8 +15,8 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Game::with('player')->get();
+        $datagame = Game::with('person')->get();
 
-        return view('game.one', compact('data'));
+        return view('game.one', compact('datagame'));
     }
 }

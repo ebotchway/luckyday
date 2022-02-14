@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     <div class="row justify-content-center">
-                        @foreach ($data as $gamers)
+                        @foreach ($datagame as $gamers)
                             <div class="row">
-                                <button class="pill-button">{{$gamers}}</button>
+                                <button id="players" class="pill-button" onclick="selected()">{{$gamers->person->pname}}</button>
                             </div>
                         @endforeach
                     </div>
@@ -33,5 +33,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function selected(){
+            document.getElementById('players').classList.toggle("selected-player");
+        };
+    </script>
 </div>
 @endsection

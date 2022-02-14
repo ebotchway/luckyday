@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Players Information') }}</div>
 
                 <div class="card-body">
+                    @csrf
                     @if(!empty(session('successMsg')))
                         <div class="alert alert-success"> {{ session()->get('successMsg') }} {{ session()->forget('successMsg')}}</div>
                     @endif
@@ -58,7 +59,6 @@
                                                 {data: 'action', name: 'action', orderable: false, searchable: false},
                                             ]
                                         });
-
                                     });
                                 </script>
                             </tbody>

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         @foreach ($datagame as $gamers)
-                            <div class="row">
+                            <div class="row col-auto">
                                 <button id="players" class="pill-button" onclick="selected()">{{$gamers->person->pname}}</button>
                             </div>
                         @endforeach

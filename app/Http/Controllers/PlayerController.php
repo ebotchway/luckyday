@@ -24,8 +24,8 @@ class PlayerController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
 
-                    $btn = '<a href="javascript:void(0)" class="edit btn btn-info btn-sm"><i class="fas fa-info-circle"></i> View</a>';
-                    $btn = $btn . '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>';
+                    $btn = '<a href="javascript:void(0)" class="edit btn btn-info btn-sm" style="width:75px; height:35px;"><i class="fas fa-info-circle"></i> View</a> ';
+                    $btn = $btn . '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm" style="width:75px; height:35px;"><i class="fas fa-edit"></i> Edit</a>';
 
                     return $btn;
                 })

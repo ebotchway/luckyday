@@ -1,53 +1,120 @@
-body,
-html {
-    height: 100%;
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
-.bgimg {
-    /* The image used */
-    background-image: url("../img/back.jpg");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
 
-.welcome {
-    position: absolute;
-    top: 100%;
-    right: 0;
+/*headers */
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-.pill-button {
-    background-color: rgba(53, 151, 175, 0.979);
+.form-control-dark {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: var(--bs-gray);
+}
+
+.form-control-dark:focus {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+.dropdown-toggle {
+    outline: 0;
+}
+
+.btn {
+    height: 100px;
+    width: 200px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container-1 {
+    margin-top: 40px;
+}
+
+/* search form */
+.loginform {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border-top: 5px solid #16b6ee;
+    background-color: #fff;
+}
+
+.myform-btn {
+    width: 200%;
+    height: 50px;
+    font-size: 17px;
+    background: #16b6ea;
     border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    border-radius: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
 }
 
-.selected-player {
-    background-color: rgb(212, 203, 67);
+.picbutton {
+    width: 400%;
+    height: 50px;
+    font-size: 17px;
+    background: rgb(7, 149, 206);
     border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
+    text-decoration-color: #fff;
+}
+
+.form-control {
+    width: 400%;
+    height: 50px;
+}
+
+.indexbtn {
+    width: 45%;
+    height: 50px;
+    background-color: red;
+    border: none;
+    color: #fff;
+}
+
+.indexbttn {
+    width: 45%;
+    height: 50px;
+    background-color: rgb(16, 170, 62);
+    border: none;
+    color: #fff;
 }

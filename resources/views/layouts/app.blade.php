@@ -47,79 +47,60 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'LUCKYDAY') }}
+        <div class="container">
+            <div class="d-flex align-items-center p-3 my-3 text-white bg-white rounded shadow-sm">
+                <a href="{{ url('/') }}">
+                    <img class="me-3" src="{{ asset('img/ld.png') }}" alt="" width="60" height="50">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                <div class="dropdown text-end ms-auto mb-2 mb-lg-0">
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu text-small " aria-labelledby="dropdownUser1">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            <!-- @if (Route::has('register'))
-    <li class="nav-item">
-                                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                                        </li>
-    @endif -->
-                        @else
-                            <ul class="nav-item dropdown">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
-                                </li>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </ul>
-                        @endguest
-                    </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    @endguest
                 </div>
             </div>
-        </nav>
+        </div>
 
         <main class="py-4">
             @yield('content')
         </main>
         <footer>
             <div class="container text-center">
-                ©
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fas fa-heart" aria-hidden="true" style="color: black;"> </i>
-                by <a href="http://qbelimited.com" target="_blank"> QBE (GHANA) LIMITED </a>
+                <center>
+                    <hr width="64%">
+                </center>
+                <p>Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> | LuckyDay</p>
             </div>
         </footer>
     </div>

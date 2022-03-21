@@ -48,7 +48,6 @@
             <br />
         </div>
         <br />
-        <br />
         <div class="d-flex justify-content-center gap-5">
             <a href="{{ route('players.show') }}">
                 <button type="button" class="btn btn-primary btn-lg shadow-sm">

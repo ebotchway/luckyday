@@ -65,17 +65,24 @@
                             </div>
                         @endif
                         <br />
-
-                        <div class="row justify-content-center">
-                            <div id="slot_wrapper">
-                                <input type="text" class="search" name="fs-mirrorinput-element" value="trigger">
-                                <ul id="slot">
-                                    @foreach ($data as $user)
-                                        <li>{{ $user->pname }}</li>
-                                    @endforeach
-                                </ul>
+                        @if (count($data) != 0)
+                            <div class="row justify-content-center">
+                                <div id="slot_wrapper">
+                                    <input type="text" class="search" name="fs-mirrorinput-element" value="trigger">
+                                    <ul id="slot">
+                                        @foreach ($data as $user)
+                                            <li>{{ $user->pname }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="row justify-content-center">
+                                <em>There are no players in the database</em>
+                                <br />
+                                <br />
+                            </div>
+                        @endif
 
                         <button type="button" id="random_location">Pick a player</button>
 
@@ -441,8 +448,12 @@
                 <div class="card">
                     <div class="card-header">{{ __('Selected Player') }}</div>
                     <div class="card-body">
-                        <br />
-                        <input type="button" name="fs-mirrorinput-element" value="target" style="text-align: center">
+                        <form action="/upload/submit" method="post">
+                            {{ csrf_field() }}
+                            <br />
+                            <input type="button" name="fs-mirrorinput-element" value="{{ $user->id }}"
+                                style="text-align: center">
+                        </form>
                     </div>
 
                 </div>

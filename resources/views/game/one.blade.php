@@ -11,10 +11,13 @@
                         <div class="row justify-content-center">
                             @if (count($datagame) != 0)
                                 @foreach ($datagame as $gamers)
-                                    <div class="row col-auto">
-                                        <button id="players" class="pill-button"
-                                            onclick="selected()">{{ $gamers->person->pname }}</button>
-                                    </div>
+                                    <ul style="list-style-type: none;">
+                                        <div class="row col-auto">
+                                            <li>
+                                                <button id="players" class="pill-button">{{ $gamers->pname }}</button>
+                                            </li>
+                                        </div>
+                                    </ul>
                                 @endforeach
                             @else
                                 <div class="row col-auto">
@@ -26,11 +29,5 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            function selected() {
-                document.getElementById('players').classList.toggle("selected-player");
-            };
-        </script>
     </div>
 @endsection

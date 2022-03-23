@@ -19,18 +19,4 @@ class Player extends Model
         'phone_num',
         'location',
     ];
-
-    public function winning()
-    {
-        // Accessing scores with their details to players
-
-        return $this->hasOne(Playerscore::class);
-    }
-
-    public function gaming()
-    {
-        // Accessing game with their details to players
-
-        return $this->hasOne(Playerscore::class);
-    }
 }

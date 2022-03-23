@@ -68,12 +68,18 @@
                         @if (count($data) != 0)
                             <div class="row justify-content-center">
                                 <div id="slot_wrapper">
-                                    <input type="text" class="search" name="fs-mirrorinput-element" value="trigger">
-                                    <ul id="slot">
-                                        @foreach ($data as $user)
-                                            <li>{{ $user->pname }}</li>
-                                        @endforeach
-                                    </ul>
+                                    <form action="{{ route('save.pick') }}" method="post">
+                                        <input type="text" class="search" name="fs-mirrorinput-element"
+                                            value="trigger">
+                                        <ul id="slot">
+                                            @foreach ($data as $user)
+                                                <li>{{ $user->pname }}</li>
+                                            @endforeach
+                                        </ul>
+                                        <button type="submit" style="margin: 10px;">Accept Player</button>
+                                        <br />
+                                        <br />
+                                    </form>
                                 </div>
                             </div>
                         @else
@@ -445,18 +451,6 @@
                 </div>
                 <br />
                 <br />
-                <div class="card">
-                    <div class="card-header">{{ __('Selected Player') }}</div>
-                    <div class="card-body">
-                        <form action="/upload/submit" method="post">
-                            {{ csrf_field() }}
-                            <br />
-                            <input type="button" name="fs-mirrorinput-element" value="{{ $user->id }}"
-                                style="text-align: center">
-                        </form>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>

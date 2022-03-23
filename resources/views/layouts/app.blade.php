@@ -100,7 +100,8 @@
                 <p>Copyright ©
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> | LuckyDay</p>
+                    </script> | LuckyDay
+                </p>
             </div>
         </footer>
     </div>

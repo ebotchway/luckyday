@@ -15,13 +15,6 @@ class Game extends Model
      * @var string[]
      */
     protected $fillable = [
-        'pid',
+        'pname',
     ];
-
-    public function person()
-    {
-        // Accessing players with their details to games
-
-        return $this->belongsTo(Player::class, 'pid');
-    }
 }

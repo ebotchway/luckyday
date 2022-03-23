@@ -21,7 +21,10 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->name('players.show');
+
 Route::get('pick', [App\Http\Controllers\PlayerController::class, 'showPlayerList'])->name('pickplayer');
+Route::post('game/saveplayer', [App\Http\Controllers\PlayerController::class, 'storegameplayer'])->name('save.pick');
+
 Route::get('scores', [App\Http\Controllers\PlayerscoreController::class, 'index'])->name('scores.show');
 Route::get('pickplayer', [App\Http\Controllers\GameController::class, 'index'])->name('game.pick');
 

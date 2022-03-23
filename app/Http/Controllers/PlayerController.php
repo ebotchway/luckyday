@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\PlayersImport;
+use App\Models\Game;
 use App\Models\Player;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -91,7 +92,18 @@ class PlayerController extends Controller
     public function showPlayerList()
     {
         $data = Player::all();
-
         return view('pick', compact('data'));
+    }
+
+    /**
+     * Saves the resource in database.
+     *
+     */
+    public function storegameplayer(Request $request)
+    {
+        $gamer = new Game;
+        $gamer->pname = $request->input('fs-mirrorinput-element');
+        $gamer->save();
+        return redirect()->back()->with('status', 'Player Added To Game Queue Successfully');
     }
 }

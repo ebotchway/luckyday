@@ -15,7 +15,7 @@ class CreatePlayerscoresTable extends Migration
     {
         Schema::create('playerscores', function (Blueprint $table) {
             $table->id();
-            $table->string('pname');
+            $table->bigInteger('pid')->unsigned();
             $table->bigInteger('#1_win')->unsigned()->nullable();
             $table->bigInteger('#1_question')->unsigned()->nullable();
             $table->bigInteger('#2_win')->unsigned()->nullable();
@@ -25,6 +25,7 @@ class CreatePlayerscoresTable extends Migration
             $table->timestamps();
 
             //foreign key
+            $table->foreign('pid')->references('id')->on('games')->onDelete('cascade');
             $table->foreign('#1_win')->references('id')->on('prizes')->onDelete('cascade');
             $table->foreign('#2_win')->references('id')->on('prizes')->onDelete('cascade');
             $table->foreign('#3_win')->references('id')->on('prizes')->onDelete('cascade');

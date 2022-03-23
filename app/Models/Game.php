@@ -17,4 +17,11 @@ class Game extends Model
     protected $fillable = [
         'pname',
     ];
+
+    public function winning()
+    {
+        // Accessing scores with their details to players
+
+        return $this->hasOne(Playerscore::class);
+    }
 }

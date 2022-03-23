@@ -15,7 +15,7 @@ class Playerscore extends Model
      * @var string[]
      */
     protected $fillable = [
-        'pname',
+        'pid',
         '#1_win',
         '#2_win',
         '#3_win',
@@ -23,6 +23,13 @@ class Playerscore extends Model
         '#2_question',
         '#3_question',
     ];
+
+    public function gameing()
+    {
+        // Accessing players with their details to scores
+
+        return $this->belongsTo(Player::class, 'pid');
+    }
 
     public function stagequest()
     {

@@ -12,9 +12,12 @@
                             @if (count($datagame) != 0)
                                 @foreach ($datagame as $gamers)
                                     <ul style="list-style-type: none;">
-                                        <div class="row col-auto">
+                                        <div class="col-auto">
                                             <li>
-                                                <button id="players" class="pill-button">{{ $gamers->pname }}</button>
+                                                <a href="game/one/{{ $gamers->id }}">
+                                                    <button id="players"
+                                                        class="pill-button">{{ $gamers->pname }}</button>
+                                                </a>
                                             </li>
                                         </div>
                                     </ul>

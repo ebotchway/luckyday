@@ -19,4 +19,16 @@ class GameController extends Controller
 
         return view('game.one', compact('datagame'));
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Support\Collection
+     */
+    public function playgame_one($id)
+    {
+        $datagame = Game::find($id);
+        return view('game.two', compact('datagame'));
+    }
 }

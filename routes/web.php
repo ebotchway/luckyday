@@ -25,6 +25,9 @@ Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->
 Route::get('pick', [App\Http\Controllers\PlayerController::class, 'showPlayerList'])->name('pickplayer');
 Route::post('game/saveplayer', [App\Http\Controllers\PlayerController::class, 'storegameplayer'])->name('save.pick');
 
+
+Route::get('game/one/{id}', [App\Http\Controllers\GameController::class, 'playgame_one'])->name('game.one');
+
 Route::get('scores', [App\Http\Controllers\PlayerscoreController::class, 'index'])->name('scores.show');
 Route::get('pickplayer', [App\Http\Controllers\GameController::class, 'index'])->name('game.pick');
 

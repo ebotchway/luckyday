@@ -53,6 +53,7 @@
 
                         #slot {
                             display: none;
+                            transition: all ease;
                         }
 
                     </style>
@@ -149,8 +150,8 @@
                                     number: 1,
                                     spinner: '.jSlots-wrapper',
                                     spinEvent: 'spin',
-                                    time: 1000,
-                                    loops: 3,
+                                    time: 8200,
+                                    loops: 4,
                                     endNum: 2, //spins backwards through the list. endNum 1 ends on the same value we started on
                                     onEnd: function(finalElement) {
                                         //set result
@@ -223,7 +224,7 @@
                                         onWin: $
                                             .noop, // Function: run on winning number. It is passed (winCount:Number, winners:Array)
                                         easing: 'swing', // String: easing type for final spin
-                                        time: 90000, // Number: total time of spin animation
+                                        time: 9000, // Number: total time of spin animation
                                         loops: 10 // Number: times it will spin during the animation
                                     };
 

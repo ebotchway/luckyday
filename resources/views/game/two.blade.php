@@ -19,7 +19,7 @@
             max-width: 80%;
             position: relative;
             border-radius: 25px;
-            transition: all 3s ease;
+            transition: all 2s ease;
             transform-style: preserve-3d;
             box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
 

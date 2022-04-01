@@ -26,9 +26,9 @@ class Playerscore extends Model
 
     public function gameing()
     {
-        // Accessing players with their details to scores
+        // Accessing game player with their details to scores
 
-        return $this->belongsTo(Player::class, 'pid');
+        return $this->belongsTo(Game::class, 'pid');
     }
 
     public function stagequest()

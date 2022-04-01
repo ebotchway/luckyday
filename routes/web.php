@@ -29,6 +29,8 @@ Route::post('game/saveplayer', [App\Http\Controllers\PlayerController::class, 's
 Route::get('game/one/{id}', [App\Http\Controllers\GameController::class, 'playgame_one'])->name('game.one');
 
 Route::get('scores', [App\Http\Controllers\PlayerscoreController::class, 'index'])->name('scores.show');
+Route::get('questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions.show');
+Route::get('prizes', [App\Http\Controllers\PrizeController::class, 'index'])->name('prizes.show');
 Route::get('pickplayer', [App\Http\Controllers\GameController::class, 'index'])->name('game.pick');
 
 Route::post('file-import', [App\Http\Controllers\PlayerController::class, 'fileImport'])->name('file-import');

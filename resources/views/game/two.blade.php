@@ -22,8 +22,6 @@
             transition: all 2s ease;
             transform-style: preserve-3d;
             box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
-
-
         }
 
         .rotated {
@@ -80,44 +78,50 @@
                         <h4>PLAYER'S INFO</h4>
                         <hr width="100%">
                         <span class="badge rounded-pill bg-primary ">FULL NAME</span>
-                        <span class="p-3">Ama Forson</span><BR>
+                        <span class="p-3">{{ $datagame->pname }}</span><BR>
                     </div><br>
                     <div class="p-5 bg-white  shadow p-3 mb-2 bg-body rounded">
                         <h4>ITEMS WON</h4>
                         <hr width="100%">
                         <span class="badge rounded-pill bg-primary ">ITEMS</span>
-                        <span class="p-3">Kettle, fan, oven</span><BR>
+                        <span class="p-3">{{ 'no value for now' }}</span><BR>
                     </div>
                     <div class="p-5 bg-white  shadow p-3 mb-2 bg-body rounded">
                         <h4>CASH PRIZE</h4>
                         <hr width="100%">
                         <span class="badge rounded-pill bg-primary ">AMT WON (₵)</span>
-                        <span class="p-3">80,000.00</span><BR>
+                        <span class="p-3">{{ 'no value for now' }}</span><BR>
                     </div>
 
                 </div>
             </div>
+
             <div class="col-md-9">
                 <div class="bg-white rounded shadow">
+
                     <div class="row justify-content-center">
-                        <div class="col-md-9 card-container">
-                            <div class="col-md-9 cards-wrapper">
-                                <div class="card-container">
-                                    <div class="card">
-                                        <div class="card-contents card-front">
-                                            <div class="card-depth">
-                                                <h2 class="text-white text-4xl">A</h2>
+                        <input type="hidden" value="{{ $i = 1 }}">
+                        @foreach ($prizes as $prize)
+                            <div class="col-auto card-container">
+                                <div class="col-auto cards-wrapper">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="card-contents card-front">
+                                                <div class="card-depth">
+                                                    <h2 class="text-white text-4xl">{{ $i }}</h2>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="card-contents card-back">
-                                            <div class="card-depth ">
-                                                <h2 class="text-white text-4xl">Burner</h2>
+                                            <div class="card-contents card-back">
+                                                <div class="card-depth ">
+                                                    <h2 class="text-white text-4xl">{{ $prize->prize }}</h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <input type="hidden" value="{{ $i++ }}">
+                        @endforeach
                     </div>
 
                     <br />
@@ -146,11 +150,14 @@
 
     <script>
         const card = document.querySelector('.card');
+        var cardn = document.getElementsByClassName('card');
+
+        for (i = 0; i < cardn.length; i++) {
+            card.addEventListener('click', clickRotate);
+        }
 
         function clickRotate() {
             card.classList.toggle('rotated');
         }
-
-        card.addEventListener('click', clickRotate);
     </script>
 @endsection

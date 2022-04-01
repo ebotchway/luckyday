@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Prize;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -28,7 +29,8 @@ class GameController extends Controller
      */
     public function playgame_one($id)
     {
-        $datagame = Game::find($id);
-        return view('game.two', compact('datagame'));
+        $datagame = Game::findOrFail($id);
+        $prizes = Prize::all()->where('stage', '=', '1');
+        return view('game.two', compact('datagame', 'prizes'));
     }
 }

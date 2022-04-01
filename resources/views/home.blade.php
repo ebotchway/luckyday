@@ -60,20 +60,24 @@
                     PLAYER SCORES
                 </button>
             </a>
-            <a href="http://">
+            {{-- <a href="http://">
                 <button type="button" class="btn btn-danger btn-lg shadow-sm">PICK PLAYER</button>
-            </a>
+            </a> --}}
         </div>
         <div class="d-flex justify-content-center gap-5">
-            <a href="http://">
-                <button type="button" class="btn btn-danger btn-lg shadow-sm">PICK PLAYER</button>
+            <a href="{{ route('questions.show') }}">
+                <button type="button" class="btn btn-warning btn-lg shadow-sm">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i> MANAGE QUESTIONS
+                </button>
             </a>
-            <a href="http://">
-                <button type="button" class="btn btn-danger btn-lg shadow-sm">PICK PLAYER</button>
+            <a href="{{ route('prizes.show') }}">
+                <button type="button" class="btn btn-success btn-lg shadow-sm">
+                    <i class="fa fa-money" aria-hidden="true"></i> MANAGE PRIZES
+                </button>
             </a>
-            <a href="http://">
+            {{-- <a href="http://">
                 <button type="button" class="btn btn-danger btn-lg shadow-sm">PICK PLAYER</button>
-            </a>
+            </a> --}}
         </div>
     </div>
 @endsection

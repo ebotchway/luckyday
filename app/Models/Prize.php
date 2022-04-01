@@ -15,8 +15,8 @@ class Prize extends Model
      * @var string[]
      */
     protected $fillable = [
-        'pname',
-        'description',
+        'stage',
+        'prize',
     ];
 
     public function score()

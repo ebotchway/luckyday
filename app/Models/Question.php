@@ -15,8 +15,9 @@ class Question extends Model
      * @var string[]
      */
     protected $fillable = [
-        'pname',
-        'description',
+        'stage',
+        'question',
+        'answer',
     ];
 
     public function score()

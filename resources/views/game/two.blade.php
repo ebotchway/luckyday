@@ -2,70 +2,50 @@
 
 @section('content')
     <style>
-        /* Box Flis */
-        .cards-wrapper {
-            margin-top: 50px;
-        }
-
-        .card-container {
-            perspective: 1200px;
-
+        .scene {
+            width: 200px;
+            height: 120px;
+            margin: 40px 0;
+            perspective: 600px;
+            border-radius: 25px;
         }
 
         .card {
-            margin: 0 auto;
-            height: 200px;
-            width: 200px;
-            max-width: 80%;
             position: relative;
-            border-radius: 25px;
-            transition: all 2s ease;
-            transform-style: preserve-3d;
-            box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .rotated {
-            transform: rotateY(-180deg);
-        }
-
-        .card-contents {
             width: 100%;
             height: 100%;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform-origin: center right;
+            transition: transform 1s;
             border-radius: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
+        }
+
+        .card.is-flipped {
+            transform: translateX(-100%) rotateY(-180deg);
+        }
+
+        .card__face {
             position: absolute;
-            top: 0;
-            left: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 200%;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 40px;
             backface-visibility: hidden;
-
+            border-radius: 25px;
         }
 
-        .card-depth {
-            transform: translateZ(100px) scale(0.982);
-            perspective: inherit;
-
+        .card__face--front {
+            background: #C1C6C4;
         }
 
-        .card-front {
-            background: linear-gradient(to top left, #dc2626, #dc2626);
-            transform-style: preserve-3d;
-        }
-
-        .card-back {
+        .card__face--back {
+            background-size: contain;
+            background-repeat: no-repeat;
             transform: rotateY(180deg);
-            background: linear-gradient(to top left, #2a6aee, #2a6aee);
-            transform-style: preserve-3d;
-        }
-
-        .card:hover {
-            z-index: 100;
-            animation: scale 0.4s linear;
-            animation-fill-mode: forwards;
-
         }
 
     </style>
@@ -90,7 +70,7 @@
                         <h4>CASH PRIZE</h4>
                         <hr width="100%">
                         <span class="badge rounded-pill bg-primary ">AMT WON (₵)</span>
-                        <span class="p-3">{{ 'no value for now' }}</span><BR>
+                        <span class="p-3" id="winner-cash">0</span><BR>
                     </div>
 
                 </div>
@@ -102,22 +82,13 @@
                     <div class="row justify-content-center">
                         <input type="hidden" value="{{ $i = 1 }}">
                         @foreach ($prizes as $prize)
-                            <div class="col-auto card-container">
-                                <div class="col-auto cards-wrapper">
-                                    <div class="card-container">
-                                        <div class="card">
-                                            <div class="card-contents card-front">
-                                                <div class="card-depth">
-                                                    <h2 class="text-white text-4xl">{{ $i }}</h2>
-                                                </div>
-                                            </div>
-                                            <div class="card-contents card-back">
-                                                <div class="card-depth ">
-                                                    <h2 class="text-white text-4xl">{{ $prize->prize }}</h2>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="scene scene--card">
+                                <div class="card" id="card-{{ $i }}">
+                                    <div class="card__face card__face--front" style="background: #FFA894 !important;">
+                                        {{ $i }}
                                     </div>
+                                    <div class="card__face card__face--back" style="background-color: red"
+                                        id="prize-value-{{ $i }}">{{ $prize->prize }}</div>
                                 </div>
                             </div>
                             <input type="hidden" value="{{ $i++ }}">
@@ -149,15 +120,17 @@
     </div>
 
     <script>
-        const card = document.querySelector('.card');
-        var cardn = document.getElementsByClassName('card');
+        var cards = document.querySelectorAll('.card');
+        var prize_amt = [];
 
-        for (i = 0; i < cardn.length; i++) {
-            card.addEventListener('click', clickRotate);
-        }
-
-        function clickRotate() {
-            card.classList.toggle('rotated');
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener('click', function() {
+                cards[i].classList.toggle('is-flipped');
+                prize_amt.push(document.getElementById('prize-value-' + (i + 1)).textContent);
+                prize_amt = prize_amt.map(Number);
+                Tot_prize_amt = prize_amt.reduce((a, b) => a + b, 0);
+                document.getElementById("winner-cash").innerHTML = Tot_prize_amt;
+            });
         }
     </script>
 @endsection

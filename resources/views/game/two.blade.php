@@ -121,6 +121,7 @@
 
     <script>
         var cards = document.querySelectorAll('.card');
+
         var prize_amt = [];
 
         for (let i = 0; i < cards.length; i++) {

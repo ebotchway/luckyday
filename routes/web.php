@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('underconstruction');
+    // return view('welcome');
 });
+
+Route::post('/', [App\Http\Controllers\ContactController::class, 'contactPost'])->name('contact.us');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('players', [App\Http\Controllers\PlayerController::class, 'index'])->name('players.show');
